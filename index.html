@@ -26,10 +26,10 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="nextSlide"></div>
-                    <div class="next" @click="prevSlide"></div>
-                    <div class="thumb" :class="{'active' : index === activeIndexSlide} "v-for="(slide, index) in slides">
-                        <img :src="slide.image" alt="Svezia" />
+                    <div class="prev" @click="prevSlide"></div>
+                    <div class="next" @click="nextSlide"></div>
+                    <div class="thumb" :class="{'active' : index === activeIndexSlide} "v-for="(slide, index) in slides" >
+                        <img @click.prevent="showUp(index)" :src="slide.image" alt="{{slides[activeIndexSlide].title}}" />
                     </div>
                 </div>
 
