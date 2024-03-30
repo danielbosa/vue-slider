@@ -5,7 +5,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
-            slides: slides, //oppure scrivo solo slides: perché hanno lo stesso nome!!
+            slides: slides, //or just slides as they have same names
             activeIndexSlide: 0,
             intervallId: false,
         }
@@ -42,8 +42,3 @@ createApp({
         this.startAutoplay()
     }
 }).mount('#app');
-
-/*
-Bonus:
-3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
-*/
