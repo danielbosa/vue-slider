@@ -7,6 +7,7 @@ createApp({
         return {
             slides: slides, //oppure scrivo solo slides: perché hanno lo stesso nome!!
             activeIndexSlide: 0,
+            intervallId: false,
         }
     },
     methods: {
@@ -27,10 +28,18 @@ createApp({
         },
         showUp(index){
             this.activeIndexSlide = index;
-        }
+        },
+        pauseAutoplay(){
+            clearInterval(this.intervallId),
+            this.intervallId = false;
+        },
+        startAutoplay(){
+            if (!this.intervallId){
+            this.intervallId = setInterval(this.nextSlide, 2000)
+        }},
     },
     mounted(){
-        setInterval(this.nextSlide, 2000)
+        this.startAutoplay()
     }
 }).mount('#app');
 

@@ -28,8 +28,8 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevSlide"></div>
                     <div class="next" @click="nextSlide"></div>
-                    <div class="thumb" :class="{'active' : index === activeIndexSlide} "v-for="(slide, index) in slides" >
-                        <img @click.prevent="showUp(index)" :src="slide.image" alt="{{slides[activeIndexSlide].title}}" />
+                    <div class="thumb" :class="{'active' : index === activeIndexSlide} "v-for="(slide, index) in slides">
+                        <img @click.prevent="showUp(index)" @mouseover ="pauseAutoplay" @mouseleave="startAutoplay" :src="slide.image" alt="{{slides[activeIndexSlide].title}}" />
                     </div>
                 </div>
 
